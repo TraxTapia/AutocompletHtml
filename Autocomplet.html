@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Autocompletado con JavaScript</title>
+    <!--
+            No olvides incluir los estilos
+        -->
+    <link rel="stylesheet" href="./css/awesomplete.base.css" />
+    <link rel="stylesheet" href="./css/awesomplete.theme.min.css" />
+  </head>
+  <style>
+    .led {
+      animation: change-background 4s linear infinite alternate;
+    }
+    /* * Keyframes */
+    @keyframes change-background {
+      0% {
+        background: linear-gradient(
+          90deg,
+          rgb(100, 91, 83) 0%,
+          rgb(235, 82, 82) 18.23%,
+          rgb(247, 143, 47) 34.37%
+        );
+      }
+      50% {
+        background: linear-gradient(
+          90deg,
+          rgb(244, 193, 81) 48.96%,
+          rgb(82, 187, 118) 66.15%
+        );
+      }
+      100% {
+        background: linear-gradient(
+          90deg,
+          rgb(38, 165, 215) 82.29%,
+          rgb(224, 105, 183) 100%
+        );
+      }
+    }
+
+    pre {
+      line-height: 2;
+    }
+
+    .box {
+      background: blue;
+      position: absolute;
+      left: 20em;
+      top: 6em;
+      height: 6em;
+      width: 6em;
+    }
+
+    .highlight {
+      animation: move-highlight 4s linear infinite alternate;
+      height: 1.75em;
+      width: 12em;
+      background: rgba(100, 100, 100, 0.2);
+      position: absolute;
+      top: 4em;
+      left: 2em;
+    }
+
+    @keyframes move-highlight {
+      100% {
+        top: 17em;
+      }
+    }
+  </style>
+  <body>
+    <h1>Probando Autocompletado</h1>
+    <a href="//parzibyte.me/blog">By parzibyte</a>
+    <br />
+    <label for="nombre">Escribe el nombre de una comida:</label>
+    <br />
+    <input
+      class="awesomplete"
+      type="text"
+      id="nombre"
+      autocomplete="off"
+      placeholder="Nombre de comida"
+      data-list="Tacos,Pizza,Hamburguesa,Pozole,Papas fritas"
+      data-minChars="1"
+    />
+    <div
+      class="js-pride-month-gradient led"
+      style="
+        width: 100%;
+        height: 0.8rem;
+        z-index: 1010;
+        background: linear-gradient(
+          90deg,
+          rgb(100, 91, 83) 0%,
+          rgb(235, 82, 82) 18.23%,
+          rgb(247, 143, 47) 34.37%,
+          rgb(244, 193, 81) 48.96%,
+          rgb(82, 187, 118) 66.15%,
+          rgb(38, 165, 215) 82.29%,
+          rgb(224, 105, 183) 100%
+        );
+      "
+    ></div>
+
+    <!--
+            El script
+        -->
+    <script type="text/javascript" src="/js/awesomplete.min.js"></script>
+  </body>
+</html>
